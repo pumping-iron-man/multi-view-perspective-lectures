@@ -8,6 +8,7 @@ Based on the initial survey regarding the requirements desired by students, the 
 
 ## Result
 The result of the question defined above is this prototype. This offers the user the option either to choose between a selection of perspective layouts or to independently drag their favorite perspectives into the "Ablagefläche" and create a layout (in the sense of "This is how I want to watch the lecture"). Then you can click on the perspective and the lecture will start. The video under CC is just a placeholder. Since it's a prototype, only the relevant functions for the case study were implemented.
+
 The prototype was well received by the students in the last interview. The students liked the opportunity to create their own individual perspective layouts using the interactive functions. Furthermore, the students were satisfied with a maximum of three perspectives for a lecture.
 
 ## Main functions
