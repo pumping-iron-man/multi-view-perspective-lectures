@@ -1,0 +1,252 @@
+/* 
+für das html und den body im HTML werden Default-Einstellungen getroffen, die für jedes Element im HTML und im body gelten, da diese jene vererbt bekommen, wenn sie keine eigenen Einstellungen treffen.
+*/
+
+html,body{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    box-sizing: border-box;
+    margin: 0%;
+    font-family: Arial;
+    letter-spacing: 0.25em;
+    font-size: 10px;
+    color: #fafafa;
+    text-align: center;
+    background-color: #343436;
+}
+
+/* 
+hierbei wird die Größe sowie die Farbe der einzelnen Layout-Bereiche gesetzt. Damit sie voneinander unterschieden werden können, werden diese farblich markiert, wobei direkte Nachbarn nicht dieselbe Farben aufweisen dürfen.
+*/
+
+.mainBar{
+    height: 415px;
+    margin-bottom: 0;
+    background-color: #343436;
+}
+.headerBar{
+    height: 60px;
+    background-color: #212121;
+}
+.perspectiveBar{
+    height: 115px;
+    background-color: #212121;
+}
+.trackingBar{
+    height: 25px;
+    background-color: #343436;
+}
+.dropBar{
+    background-color: #f0f0f0;
+    height: 415px;
+}
+.textPosition{
+    height: 100px;
+    margin-top: 170px;
+    margin-bottom: 170px;
+}
+.languageButton{
+    float: left;
+    color: white;
+    display: inline-block;
+    margin: 1%;
+    border: solid white;
+    padding: 5px 10px 5px 10px;
+    margin-left: 106px;
+}
+.infoButton{
+    z-index: 1;
+    float: right;
+    display: inline-block;
+    margin: 1%;
+    border: solid white;
+    padding: 5px 10px 5px 13px;
+    color: white;
+    margin-right: 20px;
+}
+.changeViewButton{
+    z-index: 1;
+    margin: 1%;
+    color: white;
+    border: solid white;
+    float: right;
+    display: inline-block;
+    padding: 5px 10px 5px 10px;
+    margin-right: 106px;
+}
+
+/*
+es wird festgelegt, wie sich die unten aufgeführten Button verhalten sollen, wenn der Mauszeiger über diese schwebt.
+*/
+
+.changeViewButton:hover, .infoButton:hover, .languageButton:hover{
+    color: black;
+    background: #f0f0f0;
+}
+.videoTracking{
+    height: 25px;
+    background-color: aquamarine;
+}
+.perspectiveBar .row {
+    color: white;
+}
+
+/* 
+für einzelne Button wird von der Möglichkeit der Glyphicons von Bootstrap Gebrauch gemacht. Dabei werden die einzelnen Glyphicons unterschiedlich gestaltet.
+*/
+
+.glyphicon-chevron-down{
+    width: 50%;
+    height: 32px;
+    margin-top: 20%;
+    font-size: 30px;
+    padding: 2px 0px 0px 5px;
+}
+.glyphicon-chevron-up{
+    width: 50%;
+    height: 32px;
+    margin-top: 20%;
+    font-size: 30px;
+    padding: 2px 0px 0px 5px;
+}
+.glyphicon-chevron-down:hover, .glyphicon-chevron-up:hover{
+    font-size: 33px;
+    padding: 1px 0px 0px 3px;
+}
+.perspectives{
+    height: 95px;
+    width: 180px;
+    background-color: #343436;
+    margin-top: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: fadeOut;
+    animation-duration: .3s;
+    position: absolute;
+    
+}
+
+/* 
+mit fadeOut wird spezifiert, wie die Perspektiven, sobald diese ausgeblendet werden vom Hauptbereich, zu ihrer Default-Position gezogen werden.
+*/
+
+@keyframes fadeOut{
+    from{opacity: 0}
+    to{opacity: 1}
+}
+.ion-minus{
+    position:absolute;
+    top: -19px;
+    right: -18px;
+    color: #000;
+    background-color: transparent;
+    border: none;
+}
+.ion-minus:hover{
+    font-size: 17px;
+}
+.hand{
+    cursor: pointer;
+}
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    padding-top: 5%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    animation-name: fadeInMiddle;
+    animation-duration: .4s;
+}
+
+/* 
+beschreibung wie der Modal angezeigt werden soll.
+*/
+
+@keyframes fadeInMiddle{
+    from{opacity: 0}
+    to{opacity: 1}
+}
+.modal-content-info{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 10px;
+    height: 440px;
+    width: 70%;
+}
+#infoView{
+    height: 400px;
+    width: 100%;
+    margin: -2%;
+}
+.modal-content-changeView{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 10px;
+    height: 490px;
+    width: 90%;
+} 
+#selectViewTag{
+    margin: 5%;
+}
+
+/*
+unten aufgeführt sind die Perspektivendarstellungen im Vorlagen-Editor und ihre jeweilige Gestaltung.
+*/
+
+.view_i{
+    float: left;
+    margin-bottom: 6%;
+    display: inline-block;
+    position: relative;
+}
+.view_i:hover{
+    box-shadow: 3px 10px 16px #939393;
+    border-style: solid;
+    border-width: thick;
+    border-color: cornflowerblue;
+}
+#view1{ 
+    height: 100px;
+}
+#view2{
+    height: 100px;
+    margin-left: 7%;
+}
+#view3{
+    float: left;
+    height: 120px;
+    margin-left: 8%;
+}
+#view4{
+    height: 100px;
+    width: 160px;
+}
+#view5{
+    height: 100px;
+    margin-left: 6%;
+}
+#view6{
+    height: 75px;
+    width: 150px;
+    margin-left: 4%;
+}
+#view7{
+    height: 100px;
+}
+
+/* 
+das abgespielte Video soll seine Größe und Breite von seiner Div-Klassen, dem parent, vererbt bekommen, damit es sich ganz der Größe des divs anpasst.
+*/
+
+.video1{
+    width: inherit;
+    height: inherit;
+    margin: 1px;
+}

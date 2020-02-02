@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>PROTOTYPE</title>
+    
+    <!-- hier wird die css-File mit dem HTML-Dokument verbunden. Diese CSS-File enthält alle Designentscheidungen, die vom Entwickler getätigt wurden-->
+    
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    
+    <!-- Latest compiled and minified CSS -->
+    <!-- Bootstrap CDN wird eingefügt --> 
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <!-- für die draggable, droppable und resizable Funktion -->  
+    
+    <link rel="stylesheet" type="text/css" href="css/resizeanddrag.css"/>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+</head>
+<body>
+    
+    <!-- headerBar enthält einen Sprachen-Button, einen "changeView"-Button. Ersteres erzeugt ein Modal, welcher den Informationstext anzeigt, letzteres erzeugt einen Modal, der alle auswählbaren Perspektivendarstellungen anzeigt-->
+    
+    <div class="headerBar">
+        <div id="lngBtn" class="languageButton hand" title="Sprache wählen">DE</div>
+        <div id="cVBtn" class="changeViewButton hand" data-toggle="modal" data-target="#myChangeViewModal" title="Ansichtenauswahl">Change View</div>
+        <div id="infoBtn" class="infoButton hand ion-information" data-toggle="modal" data-target="#myInfoModal" title="Information"></div>
+    </div>
+    
+    <!-- die mainBar ist der Hauptbereich, welcher bei onload() zunächst leer ist und für spätere Interaktionen als Ablagrfläche dient-->
+    
+    <div class="mainBar container-fluid">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 dropBar">
+                <div class="textPosition">
+                    <h1>Ablagefläche</h1>
+                    <br>
+                    <h4>- design your own eLecuture view -</h4>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+    
+    <!-- beim TrackingBar wird die Videokontrollleiste mit ihren Funktionen benannt dargestellt, diese Leiste weist in diesem Prototypen keine Funktionalität auf-->
+    
+    <div class="trackingBar container-fluid">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 videoTracking">play/pause-Button + Videospur + Geschwindigkeitsregler + Laustärkeregler</div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+    
+    <!-- die perspectiveBar enthäkt die Perspektiven, die sich zunächst in diesem Perspektivenbereich auf ihre Default-Position befinden -->
+    
+    <div class="perspectiveBar container-fluid">
+        <div class="row">
+            <div class="col-sm-1">
+                
+                <!-- weiterhin enthält der Perspektivenbereich einen downButton, zum Ein-/und Ausblenden der passiven Perspektiven in jenem Bereich-->
+                
+                <span id="downButton" class="glyphicon glyphicon-chevron-down hand" title="Perspektiven ein-/ausblenden"></span>
+            </div>
+            <div class="col-sm-2">
+                <div id="pp1" class="perspectives hand" title="Professor-Perpektive"><p>Professor-<br>Perspektive</p></div>    
+            </div>
+            <div class="col-sm-2">
+                <div id="pp2" class="perspectives hand" title="Folien-Perspektive"><p>Folien-<br>Perspektive</p></div>
+            </div>
+            <div class="col-sm-2">
+                <div id="pp3" class="perspectives hand" title="Tafel-Perspektive"><p>Tafel-<br>Perspektive</p></div>
+            </div>
+            <div class="col-sm-2">
+                <div id="pp4" class="perspectives hand" title="Studenten-Perspektive"><p>Studenten-<br>Perspektive</p></div>
+            </div>
+            <div class="col-sm-2">
+                <div id="pp5" class="perspectives hand" title="Fragenpool-Perspektive"><p>Fragen-<br>Perspektive</p></div>
+            </div>
+            </div>  
+        </div>
+    
+    <!-- diese zwei div-Klassen sind die Modals, die mittels dem Klicken auf den Information-Button und "change-View"-Button angezeigt werden. Beide Modals können anshcließend mit dem Schließen-Button wieder weggeklickt werden, sodass wieder der Haupt-Bereich zu sehen ist-->
+    
+    <div class="modal fade" id="myInfoModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content-info">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div><img id="infoView" src="images/informationView.png"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myChangeViewModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content-changeView">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 id="selectViewTag">Select your Layout</h4  >
+                    <div><img id="view1" class="view_i hand" src="images/View1.png"></div>
+                    <div><img id="view2" class="view_i hand" src="images/View2.png"></div>
+                    <div><img id="view3" class="view_i hand" src="images/View3.png"></div>
+                    <div><img id="view4" class="view_i hand" src="images/View4.png"></div>
+                    <div><img id="view5" class="view_i hand" src="images/View5.png"></div>
+                    <div><img id="view6" class="view_i hand" src="images/View6.png"></div>
+                    <div><img id="view7" class="view_i hand" src="images/View7.png"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- script enthält die Funktionen, die für diesen Prototypen entwickelt wurden-->
+    
+    <script src="js/index.js"></script>  
+</body>
+</html>
